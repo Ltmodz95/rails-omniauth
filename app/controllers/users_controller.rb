@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  def create
-    User.create(user_params)
+  def show
+    @user = User.find(params[:id])
   end
 
   private
 
   def user_params
-    params.permit(:email, :uid, :provider)
+    params.permit(:email, :name, :uid, :provider)
   end
 end
